@@ -5,6 +5,14 @@
     <%= @loop.user.email %>
     <%= link_to 'Download', @loop.file, download: '' %>
   </p>
+
+
+
+<audio controls>
+
+  <source src=<%= @loop.file.download %> type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 </h1>
 
 <%= link_to 'back', root_path %>
