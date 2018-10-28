@@ -1,0 +1,12 @@
+<h1>
+  <%= @loop.title %>
+  <p>
+    <%= @loop.description %>
+    <%= @loop.user.email %>
+    <%= link_to 'Download', @loop.file, download: '' %>
+  </p>
+</h1>
+
+<%= link_to 'back', root_path %>
+<%= link_to 'edit', edit_loop_path %>
+<%= link_to 'delete', loop_path, method: :delete, data: { confirm: "Are you sure?" } %>

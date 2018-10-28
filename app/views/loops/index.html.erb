@@ -1,0 +1,22 @@
+<div class="center-horizontal center-vertical">
+  <h1 class="center-horizontal">The most reliable source for melodies.</h1>
+  <div class="center-horizontal button-row display-inline-block">
+    <%= link_to new_loop_path do %>
+
+      <div class="button-primary float-left">Upload</div>
+    <% end %>
+
+    <div class="button-secondary float-left">Browse</div>
+  </div>
+
+
+
+  <% @loops.each do |loop| %>
+    <div class="box panel panel-default">
+      <h2>
+        <%= link_to loop.title, loop %>
+      </h2>
+    </div>
+  <% end %>
+
+</div>
