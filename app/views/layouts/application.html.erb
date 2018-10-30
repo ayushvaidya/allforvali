@@ -13,28 +13,30 @@
   <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to root_path do %>
-    <div class="navbar-brand">ALLFORVALI</div>
-  <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">FAQs <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Upload</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Sign up</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to "ALLFORVALI", root_path %>
+    </div>
+    <% if user_signed_in? %>
+      <ul class="nav navbar-right">
+        <li>
+          <%= link_to "Upload", new_loop_path %>
+        </li>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-right">
+        <li class="float-left">
+          <%= link_to "Sign Up", new_user_registration_path %>
+        </li>
+        <li class="float-left">
+          <%= link_to "Sign In", new_user_session_path %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </nav>
 

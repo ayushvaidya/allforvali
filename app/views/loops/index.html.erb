@@ -1,22 +1,37 @@
-<div class="center-horizontal center-vertical">
-  <h1 class="center-horizontal">The most reliable source for melodies.</h1>
-  <div class="center-horizontal button-row display-inline-block">
-    <%= link_to new_loop_path do %>
+<div class="section">
+  <h1>The most reliable source for melodies.</h1>
+  <div class="button-row display-inline-block">
 
-      <div class="button-primary float-left">Upload</div>
+    <% if user_signed_in? %>
+
+      <%= link_to new_loop_path do %>
+
+        <div class="button-primary float-left">Upload</div>
+      <% end %>
+
+      <% else %>
+
+      <%= link_to new_user_registration_path do %>
+
+        <div class="button-primary float-left">Upload</div>
+      <% end %>
+
     <% end %>
 
-    <div class="button-secondary float-left">Browse</div>
+    <% if !user_signed_in? %>
+
+      <%= link_to new_user_registration_path do %>
+
+        <div class="button-secondary float-left">Sign Up</div>
+
+      <% end %>
+    <% end %>
   </div>
+</div>
 
+<div class="section">
+  <h3> Recently Uploaded Loops </h3>
 
-
-  <% @loops.each do |loop| %>
-    <div class="box panel panel-default">
-      <h2>
-        <%= link_to loop.title, loop %>
-      </h2>
-    </div>
-  <% end %>
-
+  <%= render 'loop-container' %>
+  
 </div>
