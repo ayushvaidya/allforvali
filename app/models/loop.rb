@@ -1,8 +1,6 @@
 class Loop < ApplicationRecord
 	belongs_to :user
 	has_one_attached :file
-	file.attach(params[:file])
-
 
 	validates :file, :presence => true
 	validates :title, :presence => true

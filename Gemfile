@@ -73,3 +73,4 @@ gem 'devise'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'jquery-rails'
 gem 'material_icons'
+gem "aws-sdk-s3", require: false
