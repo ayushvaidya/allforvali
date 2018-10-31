@@ -13,7 +13,7 @@ class LoopsController < ApplicationController
     @loop = current_user.loops.build(loop_params)
 
     if @loop.save
-      redirect_to @loop, notice: "Loop was successfully created"
+      redirect_to root_path, notice: "Loop was successfully created"
     else
       render 'new'
     end
