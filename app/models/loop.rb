@@ -10,7 +10,7 @@ class Loop < ApplicationRecord
   private
 
   def correct_document_mime_type
-    if file.attached? && !file.content_type.in?(%w(audio/mp3 audio/x-mp3 audio/wav audio/x-wav))
+    if file.attached? && !file.content_type.in?(%w(audio/mp3 audio/x-mp3 audio/wav audio/x-wav audio/mpeg))
       errors.add(:file, 'Must be an MP3 or WAV file')
     end
   end
