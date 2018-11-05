@@ -7,7 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application.js',"https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>
+    <%= javascript_include_tag 'application.js',"https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   </head>
 
   <body>
@@ -16,7 +17,7 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-brand">
-      <%= link_to "ALLFORVALI", root_path %>
+      <%= link_to "ALLFORVALI", root_path, class: 'brand-logo' %>
     </div>
     <% if user_signed_in? %>
       <ul class="nav navbar-right">

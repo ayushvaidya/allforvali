@@ -16,13 +16,53 @@
 @import "bootstrap";
 
 
-$primary-color: #0066FF;
+$primary-color: #C8B16F;
+$primary-hover: #e6cc81;
+
+/* Basic */
+
+body {
+   background-color: #151618;
+   font-family: 'Roboto';
+   color: white;
+}
 
 
 /* Fonts */
 
-h1, h2, h3 {
+h1, h2 {
   margin-bottom: 32px !important;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4.7rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.7rem;  
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+a {
+  color: $primary-color;
+}
+
+a:hover, a:focus {
+  color: $primary-hover;
+  text-decoration: none;
+}
+
+.title-container {
+  max-width: 720px;
+  text-align: center;
 }
 
 /* Alerts */
@@ -36,27 +76,36 @@ h1, h2, h3 {
 /* Buttons */
 
 .button-primary {
-  padding: 0px 32px;
+  padding: 0px 40px;
   text-align: center;
   height: 60px;
   line-height: 60px;
   color: white;
   background-color: $primary-color;
-  margin: 16px;
+  margin: 8px;
   font-weight: 600;
   border-radius: 0;
+
+  &:hover, :focus {
+    background-color: $primary-hover;
+  }
 }
 
 .button-secondary {
-  padding: 0px 32px;
+  padding: 0px 40px;
   text-align: center;
   height: 60px;
   line-height: 60px;
   color: $primary-color;
   border: 1px solid $primary-color;
-  margin: 16px;
+  margin: 8px;
   font-weight: 600;
   border-radius: 0;
+
+  &:hover, :focus {
+    color: $primary-hover;
+    border-color: $primary-hover;
+  }
 }
 
 
@@ -77,10 +126,27 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
 }
+
+.header-section {
+  margin-top: 100px;
+}
 /* Nav */
 
 .nav > li {
-  margin: 10px;
+  margin: 16px;
+}
+
+.brand-logo {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Inputs & Forms */
@@ -90,7 +156,7 @@ h1, h2, h3 {
 }
 
 .form-container {
-  width: 280px;
+  width: 320px;
   display: inline-block;
   text-align: center;
 }
@@ -166,6 +232,7 @@ h1, h2, h3 {
 
 .file-field {
   margin-bottom: 16px;
+  width: 100%;
 }
 
 /* Loop Cards */
@@ -177,7 +244,7 @@ h1, h2, h3 {
   .loop-card {
     width: 100%;
     height: 60px;
-    border: 1px solid black;
+    border: 1px solid $primary-color;
     display: flex;
     justify-content: space-between;
 
@@ -190,14 +257,22 @@ h1, h2, h3 {
 
     }
 
+    .play-button-link {
+      height: 100%;
+    }
+
     .play-button {
-      height: 58px;
-      width: 58px;
-      background-color: black;
+      height: 100%;
+      width: 60px;
+      background-color: $primary-color;
       display: flex;
       align-items: center;
       justify-content: center;
       float: left;
+
+      &:hover, :focus {
+        background-color: $primary-hover;
+      }
 
       i {
         color: white;
@@ -208,11 +283,12 @@ h1, h2, h3 {
       display: flex;
       flex-direction: column;
       text-align: left;
-      margin-left: 8px;
+      margin-left: 16px;
       float: left;
 
       .title {
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 700;
       }
       .producer-name {
         font-size: 14px;
@@ -220,8 +296,8 @@ h1, h2, h3 {
     }
 
     .download-button {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -229,13 +305,17 @@ h1, h2, h3 {
 
       i {
         color: $primary-color;
+
+         &:hover, :focus {
+          color: $primary-hover;
+        }
       }
     }
   }
 
   .description {
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 8px;
   }
 }

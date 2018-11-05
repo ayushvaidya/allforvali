@@ -3,7 +3,7 @@
     <div class="loop-card">
 
       <div class="left">
-        <%= link_to loop.file, target: '_blank' do %>
+        <%= link_to loop.file, target: '_blank', class: 'play-button-link' do %>
           <div class="play-button">
             <i class="material-icons">play_arrow</i>
           </div>
@@ -35,10 +35,10 @@
 
     </div>
 
-    <% if loop.description.present? %>
+    <!--<% if loop.description.present? %>
       <div class="description">
         Description: <%= loop.description %>
       </div>
-    <% end %>
+    <% end %>-->
   </div>
 <% end %>
