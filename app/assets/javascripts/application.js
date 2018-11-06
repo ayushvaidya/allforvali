@@ -16,4 +16,9 @@
 //= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
+//= require plyr
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+const player = new Plyr('#player');
+});
