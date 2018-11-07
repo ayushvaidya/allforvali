@@ -75,3 +75,4 @@ gem 'jquery-rails'
 gem 'material_icons'
 gem "aws-sdk-s3", require: false
 gem 'plyr-rails'
+gem 'dotenv-rails', groups: [:development, :test]

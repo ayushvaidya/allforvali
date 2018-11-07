@@ -1,7 +1,15 @@
 class LoopsController < ApplicationController
-  before_action :find_loop, only: [:show, :edit, :update, :destroy]
+  before_action :find_loop, only: [:show, :edit, :update, :destroy, :download_file]
 
   def index
+    @loops = Loop.all.order("created_at DESC")
+  end
+
+  def browse_verified
+    @loops = Loop.where(:user_id => [1]).order("created_at DESC")
+  end
+
+  def browse_all
     @loops = Loop.all.order("created_at DESC")
   end
 
@@ -34,7 +42,6 @@ class LoopsController < ApplicationController
     @loop.destroy
     redirect_to root_path
   end
-
 
   private
 
