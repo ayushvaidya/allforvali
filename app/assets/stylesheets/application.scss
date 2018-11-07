@@ -16,9 +16,9 @@
 
 @import "bootstrap";
 
-
-$primary-color: #C8B16F;
-$primary-hover: #e6cc81;
+$primary-color: #03a9f4;
+$primary-hover: #66cfff;
+$border-radius: 4px;
 
 /* Basic */
 
@@ -236,7 +236,7 @@ a:hover, a:focus {
   width: 100%;
 }
 
-/* Loop Cards */
+/* Loop Cards 
 
 .loop-container {
   width: 400px;
@@ -280,19 +280,79 @@ a:hover, a:focus {
       }
     }
 
+
+  }
+
+  .description {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+
+*/
+
+
+/* Browse Filter */
+
+.browse-filter-container {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 400px;
+}
+
+.browse-filter {
+  color: white;
+  margin-right: 16px;
+}
+
+.browse-filter-selected {
+  color: white;
+  margin-right: 16px;
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}
+
+
+
+/* Player */
+
+.player-container {
+  background-color: white;
+  color: black;
+  width: 400px;
+  border: 1px solid white;
+  margin-top: 32px;
+  border-radius: $border-radius;
+}
+
+.js-player {
+  margin: 16px;
+}
+
+.player-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 52px;
+  align-items: center;
+  padding-left: 16px;
+
     .info {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       text-align: left;
-      margin-left: 16px;
       float: left;
 
       .title {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
       }
       .producer-name {
         font-size: 14px;
+        margin-left: 4px;
       }
     }
 
@@ -305,19 +365,11 @@ a:hover, a:focus {
       float: right;
 
       i {
-        color: $primary-color;
+        color: #151618;
 
          &:hover, :focus {
           color: $primary-hover;
         }
       }
     }
-  }
-
-  .description {
-    text-align: left;
-    font-size: 14px;
-    margin-top: 8px;
-  }
 }
-

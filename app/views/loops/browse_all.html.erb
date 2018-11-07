@@ -1,0 +1,18 @@
+<div class="section">
+  <h1> Browse Loops </h1>
+  <div class="browse-filter-container">
+    <%= link_to browse_all_path do %>
+      <h3 style="margin-top: 40px" class="browse-filter-selected">
+        All
+      </h3>
+    <% end %>
+    <%= link_to browse_verified_path do %>
+      <h3 style="margin-top: 40px" class="browse-filter">
+        Verified
+      </h3>
+    <% end %>
+  </div>
+  <%= render 'loop-container' %>
+
+  
+</div>

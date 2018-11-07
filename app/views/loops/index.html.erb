@@ -30,8 +30,20 @@
 </div>
 
 <div class="section">
-  <h3 style="margin-top: 40px"> Browse Recent Uploads </h3>
+  <div class="browse-filter-container">
 
+    <%= link_to browse_all_path do %>
+      <h3 style="margin-top: 40px" class="browse-filter">
+        All
+      </h3>
+    <% end %>
+
+    <%= link_to browse_verified_path do %>
+      <h3 style="margin-top: 40px" class="browse-filter-selected">
+        Verified
+      </h3>
+    <% end %>
+  </div>
   <%= render 'loop-container' %>
   
 </div>
