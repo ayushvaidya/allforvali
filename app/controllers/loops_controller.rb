@@ -6,7 +6,7 @@ class LoopsController < ApplicationController
   end
 
   def browse_verified
-    @loops = Loop.where(:user_id => [1]).order("created_at DESC")
+    @loops = Loop.where(:user_id => [1, 5]).order("created_at DESC")
   end
 
   def browse_all
