@@ -6,7 +6,7 @@
           <div class="producer-name">by <%= loop.user.username %></div>
         </div>
 
-        <div class="download-button">
+        <div class="download-button" id="download">
           <% if !user_signed_in? %>
 
             <%= link_to new_user_registration_path do %>
@@ -15,58 +15,16 @@
 
           <% else %>
 
-            <%= link_to loop.file.service_url, target: '_blank', download: ''  do %>
+            <a href='<%= loop.file.service_url %>' download>
               <i class="material-icons">arrow_downward</i>
-            <% end %>
+            </a>
             
           <% end %>
         </div>
+
     </div>
     <audio id="player" controls class="js-player" loop>
         <source src="<%= loop.file.service_url %>" type="audio/mp3">
     </audio>
   </div>
-
-  <!--<div class="loop-container">
-    <div class="loop-card">
-
-      <div class="left">
-        <%= link_to loop.file, target: '_blank', class: 'play-button-link' do %>
-          <div class="play-button">
-            <i class="material-icons">play_arrow</i>
-          </div>
-        <% end %>
-
-        <div class="info">
-          <div class="title"><%= loop.title %></div>
-          <div class="producer-name"><%= loop.user.username %></div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="download-button">
-          <% if !user_signed_in? %>
-
-            <%= link_to new_user_registration_path do %>
-              <i class="material-icons">arrow_downward</i>
-            <% end %>
-
-          <% else %>
-
-            <%= link_to loop.file, download: '' do %>
-              <i class="material-icons">arrow_downward</i>
-            <% end %>
-            
-          <% end %>
-        </div>
-      </div>
-
-    </div>
-
-   <% if loop.description.present? %>
-      <div class="description">
-        Description: <%= loop.description %>
-      </div>
-    <% end %>
-  </div>-->
 <% end %>

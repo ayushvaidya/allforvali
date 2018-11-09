@@ -6,14 +6,14 @@
 
       <%= link_to new_loop_path do %>
 
-        <div class="button-primary float-left">Upload</div>
+        <div class="button-primary float-left" id="visitUploadPage">Upload</div>
       <% end %>
 
       <% else %>
 
       <%= link_to new_user_registration_path do %>
 
-        <div class="button-primary float-left" onclick="visitRegistrationPage()">Upload</div>
+        <div class="button-primary float-left" id="visitRegistrationPage">Upload</div>
       <% end %>
 
     <% end %>
@@ -30,18 +30,26 @@
 </div>
 
 <div class="section">
-  <div class="browse-filter-container">
+<div class="section-border-title">
+  <div class="section-border"></div>
+  <div class="title-container">
+    <div class="title">Browse</div>
+  </div>
+</div>
+
+
+  <div class="browse-filter-container" style="margin-top: 80px">
 
     <%= link_to browse_all_path do %>
-      <h3 style="margin-top: 40px" class="browse-filter">
+      <div class="browse-filter">
         All
-      </h3>
+      </div>
     <% end %>
 
     <%= link_to browse_verified_path do %>
-      <h3 style="margin-top: 40px" class="browse-filter-selected">
+      <div class="browse-filter-selected">
         Verified
-      </h3>
+      </div>
     <% end %>
   </div>
   <%= render 'loop-container' %>

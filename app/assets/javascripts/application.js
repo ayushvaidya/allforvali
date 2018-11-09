@@ -21,10 +21,22 @@
 
 $(document).on("turbolinks:load", function() {
 
-const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+	const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+
+	$('#visitUploadPage').unbind('click').click(function() {
+		mixpanel.track("Visit Upload Page");
+	});	
+
+	$('#visitRegistrationPage').unbind('click').click(function() {
+		mixpanel.track("Visit Registration Page");
+	});
+
+	$('#play').unbind('click').click(function() {
+		mixpanel.track("Play");
+	});
+
+	$('#download').unbind('click').click(function() {
+		mixpanel.track("Download");
+	});
 });
 
-
-visitRegistrationPage() {
-	mixpanel.track("Visit Registration Page");
-};

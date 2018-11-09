@@ -2,14 +2,14 @@
   <h1> Browse Loops </h1>
   <div class="browse-filter-container">
     <%= link_to browse_all_path do %>
-      <h3 style="margin-top: 40px" class="browse-filter">
+      <div style="margin-top: 40px" class="browse-filter">
         All
-      </h3>
+      </div>
     <% end %>
     <%= link_to browse_verified_path do %>
-      <h3 style="margin-top: 40px" class="browse-filter-selected">
+      <div style="margin-top: 40px" class="browse-filter-selected">
         Verified
-      </h3>
+      </div>
     <% end %>
   </div>
   <%= render 'loop-container' %>

@@ -19,14 +19,14 @@
 $primary-color: #03a9f4;
 $primary-hover: #66cfff;
 $border-radius: 4px;
+$dark-font: #333;
+$border-color: #e6ecf0;
 
 /* Basic */
 
 body {
-   background-color: #151618;
    font-family: 'Roboto';
-   color: white;
-   padding-bottom: 80px;
+   color: $dark-font;
 }
 
 
@@ -72,7 +72,7 @@ a:hover, a:focus {
 .alert {
   width: 280px;
   margin: 0 auto;
-  border-radius: 0px;
+  border-radius: $border-radius;
 }
 
 /* Buttons */
@@ -86,7 +86,8 @@ a:hover, a:focus {
   background-color: $primary-color;
   margin: 8px;
   font-weight: 600;
-  border-radius: 0;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
 
   &:hover, :focus {
     background-color: $primary-hover;
@@ -102,7 +103,7 @@ a:hover, a:focus {
   border: 1px solid $primary-color;
   margin: 8px;
   font-weight: 600;
-  border-radius: 0;
+  border-radius: $border-radius;
 
   &:hover, :focus {
     color: $primary-hover;
@@ -132,10 +133,47 @@ a:hover, a:focus {
 .header-section {
   margin-top: 100px;
 }
+
+.section-border-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  .section-border {
+    width: 100%;
+    border-top: 2px solid $border-color;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .title-container {
+    width: 600px;
+    margin: 0 auto;
+    z-index: 10;
+  }
+
+  .title {
+    color: #ccd1d4;
+    display: inline-block;
+    padding: 0px 24px;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+
+
 /* Nav */
 
 .nav > li {
   margin: 16px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .brand-logo {
@@ -143,13 +181,28 @@ a:hover, a:focus {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: white;
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  border-top:1px solid $border-color;
+  margin-top: 120px;  
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+
 
 /* Inputs & Forms */
 :root {
@@ -165,7 +218,7 @@ a:hover, a:focus {
 
 .form-control {
   height: auto;
-  border-radius: 0;
+  border-radius: $border-radius;
 }
 
 .form-signin {
@@ -196,7 +249,7 @@ a:hover, a:focus {
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;
-  border-radius: .25rem;
+  border-radius: $border-radius;
   transition: all .1s ease-in-out;
 }
 
@@ -243,23 +296,27 @@ a:hover, a:focus {
   display: flex;
   flex-direction: row;
   align-self: center;
-  width: 400px;
+  width: 600px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .browse-filter {
-  color: white;
+  color: $dark-font;
   margin-right: 16px;
 
   &:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $dark-font;;
     padding-bottom: 4px;
   }
 }
 
 .browse-filter-selected {
-  color: white;
+  color: $dark-font;;
   margin-right: 16px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid $dark-font;;
   padding-bottom: 4px;
 }
 
@@ -270,10 +327,16 @@ a:hover, a:focus {
 .player-container {
   background-color: white;
   color: black;
-  width: 400px;
-  border: 1px solid white;
+  width: 600px;
+  border: 1px solid $border-color;
   margin-top: 32px;
   border-radius: $border-radius;
+}
+
+.plyr--audio .plyr__controls {
+  border-radius: $border-radius;
+  width: calc(100% - 2px);
+  margin-bottom: 1px;  
 }
 
 .js-player {
@@ -313,7 +376,7 @@ a:hover, a:focus {
       float: right;
 
       i {
-        color: #151618;
+        color: #4f5b5f;
 
          &:hover, :focus {
           color: $primary-hover;
