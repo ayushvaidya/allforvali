@@ -1,0 +1,35 @@
+  <div class="form-container">
+  <%= simple_form_for @loop, 
+      html: { multipart: true },
+      wrapper: :floating_labels_form,
+      wrapper_mappings: {
+        select:
+        :floating_labels_select 
+      } do |f| %>
+
+    <% if @loop.errors.any? %>
+      <div id="errors">
+        <h2>
+          <%= pluralize(@loop.errors.count, "error") %>
+          prevented this Pin from saving
+        </h2>
+        <ul>
+          <% @loop.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.file_field :file, class: "file-field" %>
+
+    <%= f.input :title, placeholder: 'title' %>
+
+    <%= f.input :description, placeholder: 'description' %>
+    
+    <%= f.button :submit, class: "button-primary" %>
+
+  <% end %>
+</div>

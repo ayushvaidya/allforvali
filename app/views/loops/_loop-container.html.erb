@@ -1,0 +1,36 @@
+<% @loops.each do |loop| %>
+  <div class="player-container">
+    <div class="player-info">
+      <div class='left-section'>
+        <div class="profile-picture" style="background-image:url(<%= loop.user.avatar.service_url %>)"></div>
+
+        <div class="info">
+          <div class="title"><%= loop.title %></div>
+          <%= link_to loop.user.username, user_path(loop.user.id), class: 'producer-name' %>
+        </div>
+      </div>
+
+    <audio id="player" controls class="js-player" loop>
+        <source src="<%= loop.file.service_url %>" type="audio/mp3">
+    </audio>
+
+      <div class="right-section">
+        <div class="download-button">
+          <% if !user_signed_in? %>
+
+            <%= link_to new_user_registration_path do %>
+              <i class="material-icons">arrow_downward</i>
+            <% end %>
+
+          <% else %>
+
+            <%= link_to loop.file.service_url, target: '_blank', download: ''  do %>
+              <i class="material-icons">arrow_downward</i>
+            <% end %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

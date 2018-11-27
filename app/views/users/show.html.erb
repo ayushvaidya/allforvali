@@ -1,0 +1,22 @@
+<div class="section" style="margin-top: 40px">
+
+  <div class="profile-info">
+
+    <div class="profile-picture" style="background-image:url(<%= @user.avatar.service_url %>)"></div>
+    <div class="info">
+      <div class="name"><%= @user.username %></div>
+      <div class="bio">Sound Curator | Toronto</div>
+      <div class="follower-stats">83 Following | 74 Followers</div>
+      <div class="social-links"></div>
+    </div>
+  </div>
+
+  <div class="section-border-title" style="margin-bottom: 40px">
+    <div class="section-border"></div>
+    <div class="title">Loops</div>
+  </div>
+
+  <%= render 'loop-container' %>
+
+
+</div>

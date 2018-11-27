@@ -1,0 +1,84 @@
+<div class="left-column">
+  <div class="side-nav">
+    <div class="side-nav-group">
+      <div class="label">Browse</div>
+      <div class="menu-item">All</div>
+      <div class="menu-item">Verified</div>
+    </div>
+
+    <div class="side-nav-group">
+      <div class="label">Find By</div>
+      <div class="menu-item">Artist Type</div>
+      <div class="menu-item">Genre</div>
+      <div class="menu-item">Instrument</div>
+      <div class="menu-item">Key Signature</div>
+      <div class="menu-item">BPM</div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="right-column">
+  <div class="section">
+    <h2 class="title-container">Thousands of loops curated, categorized and searchable. </h2>
+    <div class="button-row display-inline-block">
+
+      <% if user_signed_in? %>
+
+        <%= link_to new_loop_path do %>
+
+          <div class="button-primary float-left">Upload</div>
+        <% end %>
+
+        <% else %>
+
+      <% end %>
+
+      <% if !user_signed_in? %>
+
+        <%= link_to new_user_registration_path do %>
+
+          <div class="button-primary float-left">Create a free account</div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+  <!-- Loop Section -->
+
+  <div class="section" style="margin-top: 40px">
+    <!--<div class="section-border-title">
+      <div class="section-border"></div>
+      <div class="title">Loops</div>
+    </div>-->
+    <div class="section-label" style="margin-top: 40px">
+      Browse all
+    </div>
+
+    <%= render 'loop-container' %>
+    <!--<%= link_to browse_verified_path do %>
+      <div class="button-secondary" style="margin-top: 40px">View More</div>
+    <% end %>-->
+  </div>
+
+
+  <!-- Video Tutorials -->
+
+  <div class="section" style="margin-top: 80px">
+    <!--<div class="section-border-title">
+      <div class="section-border"></div>
+      <div class="title">Video Tutorials</div>
+    </div>-->
+
+    <!--<%= render 'video-container' %>
+
+    <%= link_to new_user_registration_path do %>
+      <div class="button-secondary" style="margin-top: 40px">View More</div>
+    <% end %>-->
+  </div>
+</div>
+
