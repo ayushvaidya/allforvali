@@ -10,16 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require jquery3
 //= require activestorage
 //= require turbolinks
 //= require plyr
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
-
-const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+    const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
 });
