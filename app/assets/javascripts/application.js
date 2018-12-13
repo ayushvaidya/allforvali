@@ -22,20 +22,13 @@ $(document).on("turbolinks:load", function() {
     const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
 });
 
-function onlyPlayOneIn(container) {
-    container.addEventListener("play", function(event) {
-        console.log('play')
-        audio_elements = container.getElementsByTagName("audio")
-            for(i=0; i < audio_elements.length; i++) {
-                audio_element = audio_elements[i];
-                if (audio_element !== event.target) {
-                    console.log('pausing')
-                    audio_element.pause();
-                }
-            }
-        }, true);
-    }
-
-document.addEventListener("DOMContentLoaded", function() {
-    onlyPlayOneIn(document.body);
-});
+(function() {
+    console.log('iife')
+    $("audio").on("play", function() {
+        console.log('on play')
+        $("audio").not(this).each(function(index, audio) {
+            console.log('pause')
+            audio.pause();
+        });
+    });
+})()
