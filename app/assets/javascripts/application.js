@@ -24,10 +24,12 @@ $(document).on("turbolinks:load", function() {
 
 function onlyPlayOneIn(container) {
     container.addEventListener("play", function(event) {
+        console.log('play')
         audio_elements = container.getElementsByTagName("audio")
             for(i=0; i < audio_elements.length; i++) {
                 audio_element = audio_elements[i];
                 if (audio_element !== event.target) {
+                    console.log('pausing')
                     audio_element.pause();
                 }
             }
