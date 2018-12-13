@@ -20,4 +20,11 @@
 
 $(document).on("turbolinks:load", function() {
     const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+    $(function() {
+        $("audio").on("play", function() {
+            $("audio").not(this).each(function(index, audio) {
+                audio.pause();
+            });
+        });
+    });
 });
