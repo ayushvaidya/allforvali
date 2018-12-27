@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_003124) do
+ActiveRecord::Schema.define(version: 2018_12_27_215036) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 2018_11_01_003124) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "looper_loops", force: :cascade do |t|
+    t.string "loop_category"
+    t.string "loop_genre"
+    t.string "loop_comments_count"
+    t.string "loop_description"
+    t.string "loop_detail_link"
+    t.integer "loop_downloads"
+    t.string "loop_duration"
+    t.string "loop_mp3_path"
+    t.string "loop_mp3_path_absolute"
+    t.string "loop_name"
+    t.string "loop_tags_str_csv"
+    t.string "loop_username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "loops", force: :cascade do |t|

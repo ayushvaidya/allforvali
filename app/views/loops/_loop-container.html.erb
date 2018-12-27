@@ -34,3 +34,39 @@
     </div>
   </div>
 <% end %>
+
+<% @looper_loops.each do |loop| %>
+  <div class="player-container">
+    <div class="player-info">
+      <div class='left-section'>
+        <div class="profile-picture"></div>
+
+        <div class="info">
+          <div class="title"><%= loop.loop_name %></div>
+        </div>
+      </div>
+
+    <audio id="player" controls class="js-player" loop>
+        <source src="<%= loop.loop_mp3_path_absolute %>" type="audio/mp3">
+    </audio>
+
+      <div class="right-section">
+        <div class="download-button">
+          <% if !user_signed_in? %>
+
+            <%= link_to new_user_registration_path do %>
+              <i class="material-icons">arrow_downward</i>
+            <% end %>
+
+          <% else %>
+
+            <%= link_to loop.loop_mp3_path_absolute, target: '_blank', download: ''  do %>
+              <i class="material-icons">arrow_downward</i>
+            <% end %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
