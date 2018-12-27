@@ -1,0 +1,2 @@
+class LooperLoop < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loop_category: MyString
+  loop_genre: MyString
+  loop_comments_count: MyString
+  loop_description: MyString
+  loop_detail_link: MyString
+  loop_downloads: 1
+  loop_duration: MyString
+  loop_mp3_path: MyString
+  loop_mp3_path_absolute: MyString
+  loop_name: MyString
+  loop_tags_str_csv: MyString
+  loop_username: MyString
+
+two:
+  loop_category: MyString
+  loop_genre: MyString
+  loop_comments_count: MyString
+  loop_description: MyString
+  loop_detail_link: MyString
+  loop_downloads: 1
+  loop_duration: MyString
+  loop_mp3_path: MyString
+  loop_mp3_path_absolute: MyString
+  loop_name: MyString
+  loop_tags_str_csv: MyString
+  loop_username: MyString

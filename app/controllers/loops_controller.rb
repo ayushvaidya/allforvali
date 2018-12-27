@@ -3,6 +3,7 @@ class LoopsController < ApplicationController
 
   def index
     @loops = Loop.all.order("created_at DESC")
+    @looper_loops = LooperLoop.all
   end
 
   def browse_verified
