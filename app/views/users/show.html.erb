@@ -2,7 +2,12 @@
 
   <div class="profile-info">
 
-    <div class="profile-picture"></div>
+    <% if @user.avatar.present? %>
+      <div class="profile-picture" style="background-image:url(<%= @user.avatar.service_url %>)"></div>
+    <% else %>
+      <div class="profile-picture"></div>
+    <% end %>
+
     <div class="info">
       <div class="name"><%= @user.username %></div>
       <div class="bio">Sound Curator | Toronto</div>
